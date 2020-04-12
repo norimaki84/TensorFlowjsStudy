@@ -10,7 +10,28 @@
 
 <script>
   export default {
+    name: 'App',
+    components: {
 
+    },
+    data() {
+      return {}
+    },
+    computed: {
+
+    },
+    created() {
+
+    },
+    beforeMount() {
+
+    },
+    mounted() {
+
+    },
+    methods: {
+
+    }
   }
 </script>
 
