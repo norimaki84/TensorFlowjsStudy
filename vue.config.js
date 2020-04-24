@@ -12,10 +12,10 @@ module.exports = {
 	filenameHashing: false,
 	devServer: {
 		port: 9000,
-		// contentBase: './htdocs',
+		contentBase: './htdocs',
 		host: 'localhost',
 	},
-	//outputDir: './htdocs', // buildした際の出力ディレクトリ
+	outputDir: './htdocs', // buildした際の出力ディレクトリ
 	lintOnSave: false,
 	css: {
 		loaderOptions: {
@@ -35,13 +35,19 @@ module.exports = {
 					exclude: /node_modules/,
 				},
 				{
-					test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-					loader: 'url-loader',
-					options: {
-						limit: 10000,
-						name: 'fonts/[name].[ext]'
-					}
+					test: /\.(woff|woff2)$/,
+					use: {
+						loader: 'url-loader',
+					},
 				},
+				// {
+				// 	test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				// 	loader: 'url-loader',
+				// 	options: {
+				// 		// limit: 10000,
+				// 		name: 'fonts/[name].[ext]'
+				// 	}
+				// },
 				{
 					test: /\.(ogg|mp3|wav|mpeg)$/i,
 					use: [
